@@ -1,0 +1,21 @@
+# configuration files
+.vscode/
+*.egg-info/
+
+# datasets
+data/
+
+# results
+log_archive/
+log/
+results/
+visualization/
+
+# cache
+__pycache__/
+
+# bash files
+
+# launch files
+start_gen.py
+run.py
