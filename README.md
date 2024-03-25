@@ -1,8 +1,15 @@
 # Bort
 
-[ICLR 2023] Official PyTorch implementation for ["Bort: Towards Explainable Neural Networks with Bounded Orthogonal Constraint"](https://arxiv.org/abs/2212.09062).
+![results](assets/results.png)
+
+**[ICLR 2023]** Official PyTorch implementation for ["Bort: Towards Explainable Neural Networks with Bounded Orthogonal Constraint"](https://arxiv.org/abs/2212.09062).
+This paper proposes **Bort**, an optimizer for improving model explainability with boundedness and orthogonality constraints on model parameters, derived from the sufficient conditions of model comprehensibility and invertibility.
+
+![framework](assets/framework.png)
 
 ## News
+
+- [2024-3-25] We are working on the code cleaning and will release the code soon.
 
 ## Installation Guide
 
