@@ -1,0 +1,12 @@
+torch>=2.3.0
+torchvision
+torchaudio
+numpy
+matplotlib
+scikit-learn
+opencv-python
+einops>=0.7.0
+omegaconf>=2.3.0
+tensorboard
+termcolor
+albumentations
