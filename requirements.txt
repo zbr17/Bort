@@ -10,3 +10,4 @@ omegaconf>=2.3.0
 tensorboard
 termcolor
 albumentations
+pytest
