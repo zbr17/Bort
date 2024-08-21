@@ -138,9 +138,6 @@ class BortS(Optimizer):
                 grads,
                 momentum_buffer_list,
                 weight_decay=group["weight_decay"],
-                gamma=group["gamma"],
-                amptitude=group["amptitude"],
-                mode=group["mode"],
                 momentum=group["momentum"],
                 lr=group["lr"],
                 dampening=group["dampening"],
@@ -149,6 +146,10 @@ class BortS(Optimizer):
                 has_sparse_grad=has_sparse_grad,
                 grad_scale=getattr(self, "grad_scale", None),
                 found_inf=getattr(self, "found_inf", None),
+                # bort specific
+                gamma=group["gamma"],
+                amptitude=group["amptitude"],
+                mode=group["mode"],
             )
 
             if group["momentum"] != 0:
@@ -173,6 +174,7 @@ def _single_tensor_borts(
     nesterov: bool,
     maximize: bool,
     has_sparse_grad: bool,
+    # bort specific
     gamma: float,
     amptitude: float,
     mode: str,
@@ -182,8 +184,8 @@ def _single_tensor_borts(
     for i, param in enumerate(params):
         grad = grads[i] if not maximize else -grads[i]
 
-        # bort correction
-        if gamma != 0:
+        # NOTE: Perform bort correction
+        if gamma > 0.0:
             param_delta = bort_correction(param, amptitude=amptitude, mode=mode)
             grad = grad.add(param_delta, alpha=gamma)
 
