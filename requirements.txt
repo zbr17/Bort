@@ -11,3 +11,4 @@ tensorboard
 termcolor
 albumentations
 pytest
+timm
