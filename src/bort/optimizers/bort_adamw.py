@@ -38,7 +38,7 @@ class BortA(Optimizer):
         # bort specific
         gamma: float = 0.0,
         amptitude: float = 1.0,
-        mode: str = "default",
+        mode: str = "l2-full",
     ):
         if not 0.0 <= lr:
             raise ValueError(f"Invalid learning rate: {lr}")
@@ -58,10 +58,6 @@ class BortA(Optimizer):
         # bort specific
         if gamma < 0.0:
             raise ValueError(f"Invalid gamma value: {gamma}")
-        if amptitude < 0.0:
-            raise ValueError(f"Invalid amptitude value: {amptitude}")
-        if mode not in ["default", "row", "col"]:
-            raise ValueError(f"Invalid mode value: {mode}")
         
         defaults = dict(
             lr=lr,

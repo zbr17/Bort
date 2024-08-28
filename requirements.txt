@@ -12,3 +12,4 @@ termcolor
 albumentations
 pytest
 timm
+seaborn
