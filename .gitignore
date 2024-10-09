@@ -2,4 +2,3 @@ __pycache__/
 *.egg-info/
 
 dataset/
-exps/
