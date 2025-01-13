@@ -11,7 +11,7 @@ from bort import BortS, BortA
 
 print("Experiment 1: BortS")
 model = torch.nn.Linear(6, 2, bias=False)
-optimizer = BortS(model.parameters(), lr=0.1, gamma=0.1, mode="l1-fullrow", amptitude=1.0)
+optimizer = BortS(model.parameters(), lr=0.1, gamma=0.1, mode="l1-fullrow", amptitude="ada")
 
 with torch.no_grad():
     weight = model.weight.data
@@ -42,7 +42,7 @@ with torch.no_grad():
 
 print("Experiment 2: BortA")
 model = torch.nn.Linear(6, 2, bias=False)
-optimizer = BortA(model.parameters(), lr=0.1, weight_decay=0.0, gamma=0.1, mode="l1-fullrow", amptitude=1.0)
+optimizer = BortA(model.parameters(), lr=0.1, weight_decay=0.0, gamma=0.1, mode="l1-fullrow", amptitude="ada")
 
 with torch.no_grad():
     weight = model.weight.data
